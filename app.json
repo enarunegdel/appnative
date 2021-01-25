@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "EnaruNegdel",
+    "description": "Инару нэгдлийн гишүүдийн аппликейшн.",
+    "slug": "EnaruNegdel",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/img/tlogo.png",
+    "splash": {
+      "image": "./assets/img/splashScreen.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "org.enaru",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "versionCode": 1,
+      "package": "org.enaru",
+      "useNextNotificationsApi": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/img/logo1.png",
+        "backgroundColor": "#fff"
+      }
+    }
+  }
+}
