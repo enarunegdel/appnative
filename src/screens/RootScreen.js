@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import { Entypo } from "@expo/vector-icons";
@@ -9,7 +9,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import MyHeaderButton from "../components/MyHeaderButton";
 import UserContext from "../contexts/UserContext";
 
-const RootScreen = ({ navigation }) => {
+const RootScreen = ({ navigation, route }) => {
   const state = useContext(UserContext);
 
   React.useLayoutEffect(() => {
@@ -23,13 +23,7 @@ const RootScreen = ({ navigation }) => {
           />
         </HeaderButtons>
       ),
-      title: state.userName ? (
-        <>
-          {state.userName}: {state.userLevel}
-        </>
-      ) : (
-        "Инару нэгдэл"
-      ),
+      title: "ИНАРУ НЭГДЭЛ",
     });
   }, [navigation, state.userName, state.userLevel]);
 
@@ -70,7 +64,7 @@ const RootScreen = ({ navigation }) => {
             <View style={css.buttonIconStyle}>
               <AntDesign name="message1" size={35} color="white" />
             </View>
-            <Text style={css.buttonTextStyle}>Зар, нийтлэл</Text>
+            <Text style={css.buttonTextStyle}>Цахим ажлын орчин</Text>
           </View>
           <View style={[css.buttonRowStyle, { backgroundColor: "#B83227" }]}>
             <TouchableOpacity
@@ -87,14 +81,11 @@ const RootScreen = ({ navigation }) => {
       <View style={{ flex: 5 }}>
         <View style={css.buttonAreaStyle}>
           <View style={[css.buttonRowStyle, { backgroundColor: "#6AB04A" }]}>
-            <TouchableOpacity onPress={() => navigation.navigate("Education")}>
-              <View style={css.buttonIconStyle}>
-                <Foundation name="social-skillshare" size={50} color="white" />
-              </View>
-              <Text style={css.buttonTextStyle}>Цахим ажлын орчин</Text>
-            </TouchableOpacity>
+            <View style={css.buttonIconStyle}>
+              <Foundation name="social-skillshare" size={50} color="white" />
+            </View>
+            <Text style={css.buttonTextStyle}>Ургийн бичиг</Text>
           </View>
-
           <View style={[css.buttonRowStyle, { backgroundColor: "#019031" }]}>
             <View style={css.buttonIconStyle}>
               <MaterialIcons name="question-answer" size={35} color="white" />

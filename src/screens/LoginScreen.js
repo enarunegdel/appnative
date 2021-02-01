@@ -11,17 +11,14 @@ import {
 import MyButton from "../components/MyButton";
 import UserContext from "../contexts/UserContext";
 
-export default function ({ navigation }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [token, setToken] = useState("");
+export default function ({ route, navigation }) {
+  const [email, setEmail] = useState("azjargaljambal@gmail.com");
+  const [password, setPassword] = useState("0000");
   const [error, setError] = useState(null);
 
   const state = useContext(UserContext);
 
   const loginHandler = () => {
-    setError(null);
-
     if (email.length === 0) {
       Alert.alert("Та имэйл хаягаа бичнэ үү...");
       return;
@@ -51,11 +48,6 @@ export default function ({ navigation }) {
         Та имэйл болон нууц үгээ оруулна уу
       </Text>
 
-      {error && (
-        <Text style={{ color: "red", fontSize: 16, textAlign: "center" }}>
-          {error}
-        </Text>
-      )}
       <ScrollView>
         <TextInput
           keyboardType="email-address"
@@ -90,6 +82,11 @@ export default function ({ navigation }) {
             onPress={loginHandler}
           />
         </View>
+        {error && (
+          <Text style={{ color: "red", fontSize: 16, textAlign: "center" }}>
+            ---{error}
+          </Text>
+        )}
       </ScrollView>
     </View>
   );

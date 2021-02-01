@@ -5,6 +5,8 @@ import SignupScreen from "../screens/SignupScreen";
 import LoginScreen from "../screens/LoginScreen";
 import AboutScreen from "../screens/AboutEnaruScreen";
 import SplashScreen from "../screens/SplashScreen";
+import ProjectScreen from "../screens/ProjectScreen";
+import DrawerContent from "../components/DrawerContent";
 
 const Drawer = createDrawerNavigator();
 
@@ -18,9 +20,12 @@ export default () => {
   }
 
   return (
-    <Drawer.Navigator initialRouteName="Root">
+    <Drawer.Navigator
+      initialRouteName="Root"
+      drawerContent={(props) => <DrawerContent {...props} />}
+    >
       <Drawer.Screen name="Нүүр" component={MyStackNavigator} />
-      <Drawer.Screen name="Хэрэгжиж буй төслүүд" component={MyStackNavigator} />
+      <Drawer.Screen name="Хэрэгжиж буй төслүүд" component={ProjectScreen} />
       <Drawer.Screen name="Инару нэгдлийн тухай" component={AboutScreen} />
       <Drawer.Screen name="Зар, нийтлэл" component={MyStackNavigator} />
 

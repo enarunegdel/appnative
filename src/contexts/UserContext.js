@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
-
 const UserContext = React.createContext();
 
 export const UserStore = (props) => {
@@ -70,11 +69,11 @@ export const UserStore = (props) => {
   };
 
   const loginFailed = (error) => {
+    console.log("-------", error);
     setIsLoggedIn(false);
     setUserName(null);
     setEmail(null);
     setUserRole(null);
-    console.log(error);
   };
 
   const loginUserSuccessful = async (
@@ -108,19 +107,19 @@ export const UserStore = (props) => {
         setIsLoggedIn,
         token,
         setToken,
-        login,
         userRole,
+        setUserRole,
         userName,
+        setUserName,
         email,
-        signUp,
-        logout,
+        setEmail,
         isLoading,
         setIsLoading,
-        setEmail,
-        setUserName,
-        setUserRole,
-        setUserLevel,
         userLevel,
+        setUserLevel,
+        login,
+        signUp,
+        logout,
       }}
     >
       {props.children}

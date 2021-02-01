@@ -4,7 +4,7 @@ import MyButton from "../components/MyButton";
 import MyInput from "../components/MyInput";
 import UserContext from "../contexts/UserContext";
 
-export default function ({ navigation }) {
+export default function ({ route, navigation }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");

@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import MyDrawerNavigation from "./src/navigation/MyDrawerNavigator";
 import { UserStore } from "./src/contexts/UserContext";
 
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
       <UserStore>
@@ -12,3 +12,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+export default App;

@@ -36,14 +36,12 @@ function MembersScreen({ navigation }) {
               { backgroundColor: "#B83227", alignSelf: "center" },
             ]}
           >
-            <TouchableOpacity onPress={() => navigation.navigate("AboutEnaru")}>
-              <View style={css.buttonIconStyle}>
-                <AntDesign name="profile" size={35} color="white" />
-              </View>
-              <Text style={css.buttonTextStyle}>
-                Санал асуулгын хуудас бөглөх
-              </Text>
-            </TouchableOpacity>
+            <View style={css.buttonIconStyle}>
+              <AntDesign name="profile" size={35} color="white" />
+            </View>
+            <Text style={css.buttonTextStyle}>
+              Санал асуулгын хуудас бөглөх
+            </Text>
           </View>
           <View
             style={[
@@ -51,14 +49,10 @@ function MembersScreen({ navigation }) {
               { backgroundColor: "#B83227", alignSelf: "center" },
             ]}
           >
-            <TouchableOpacity onPress={() => navigation.navigate("AboutEnaru")}>
-              <View style={css.buttonIconStyle}>
-                <SimpleLineIcons name="note" size={35} color="white" />
-              </View>
-              <Text style={css.buttonTextStyle}>
-                Гишүүнчлэлийн хүсэлт илгээх
-              </Text>
-            </TouchableOpacity>
+            <View style={css.buttonIconStyle}>
+              <SimpleLineIcons name="note" size={35} color="white" />
+            </View>
+            <Text style={css.buttonTextStyle}>Гишүүнчлэлийн хүсэлт илгээх</Text>
           </View>
 
           <View
